@@ -1,0 +1,75 @@
+{
+  "name": "zod-generic-service-connector",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier src --write",
+    "build": "tsc --emitDeclarationOnly && parcel build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "parcel": "^2.8.3",
+    "prettier": "^2.8.7",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@types/node": "^18.15.11",
+    "node-fetch": "^3.3.1",
+    "zod": "^3.21.4"
+  },
+  "type": "module",
+  "source": "./src/index.ts",
+  "main": "./dist/esm/index.js",
+  "targets": {
+    "cjs": {
+      "source": [
+        "./src/base-service.ts",
+        "./src/http-service.ts"
+      ],
+      "distDir": "./dist/cjs",
+      "isLibrary": true,
+      "outputFormat": "commonjs"
+    },
+    "esm": {
+      "source": [
+        "./src/base-service.ts",
+        "./src/http-service.ts"
+      ],
+      "distDir": "./dist/esm",
+      "isLibrary": true,
+      "outputFormat": "esmodule"
+    }
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/esm/base-service.js",
+      "require": "./dist/cjs/base-service.js",
+      "types": "./dist/base-service.d.ts"
+    },
+    "./http": {
+      "import": "./dist/esm/http-service.js",
+      "require": "./dist/cjs/http-service.js",
+      "types": "./dist/http-service.d.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "types": [
+        "./dist/base-service.d.ts"
+      ],
+      "http": [
+        "./dist/http-service.d.ts"
+      ]
+    }
+  }
+}

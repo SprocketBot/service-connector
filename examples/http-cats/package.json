@@ -1,0 +1,20 @@
+{
+  "name": "http-cats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "tsc -p tsconfig.json src",
+    "start": "tsc && node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "zod-generic-service-connector": "link:../.."
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
