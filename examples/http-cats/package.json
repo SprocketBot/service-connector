@@ -11,10 +11,11 @@
   "author": "",
   "license": "ISC",
   "type": "module",
-  "dependencies": {
-    "zod-generic-service-connector": "link:../.."
-  },
   "devDependencies": {
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@sprocketbot/http-connector": "^1.0.0",
+    "zod": "^3.21.4"
   }
 }

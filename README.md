@@ -10,9 +10,11 @@ Included is an example (but incomplete) of an HTTP Service Implementation.
 
 ### Simple Usage
 ```typescript
+import {BaseService} from "@sprocketbot/service-connector";
+
 // Some service exposes some endpoints
 enum MyServiceEndpoints {
-    FOO = "foo"
+    FOO = "foo",
     BAR = "bar"
 }
 

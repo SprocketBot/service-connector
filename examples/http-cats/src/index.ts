@@ -1,4 +1,4 @@
-import { HttpMethod, HttpService } from 'zod-generic-service-connector/http';
+import { HttpMethod, HttpService } from '@sprocketbot/http-connector';
 import { z } from 'zod';
 
 const CatApiUrl = 'https://meowfacts.herokuapp.com';

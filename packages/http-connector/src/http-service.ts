@@ -1,5 +1,10 @@
-import { BaseService } from './base-service';
-import { DataRecord, Enum, SendInput } from './types';
+import {
+  Enum,
+  DataRecord,
+  BaseService,
+  SendInput,
+} from '@sprocketbot/service-connector';
+import { z } from 'zod';
 import fetch from 'node-fetch';
 
 export enum HttpMethod {
@@ -18,7 +23,10 @@ export abstract class HttpService<
     HttpServiceMetadata
   >,
 > extends BaseService<Endpoints, Schemas> {
-  transport = <E extends Endpoints>(endpoint: E, data: SendInput<E>) => {
+  transport = async <E extends Endpoints>(
+    endpoint: E,
+    data: SendInput<E>,
+  ): Promise<unknown> => {
     const method = this.schemas[endpoint].method;
     const endpointUrl = new URL(`${this.baseUrl}/${endpoint}`);
     switch (method) {

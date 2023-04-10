@@ -20,5 +20,5 @@
     "noFallthroughCasesInSwitch": false,
     "esModuleInterop": true
   },
-  "files": ["./src/index.ts"]
+  "include": ["./src/**/*.ts", "./src/**/*.d.ts"]
 }
