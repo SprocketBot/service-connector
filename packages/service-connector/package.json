@@ -3,6 +3,9 @@
     "version": "1.0.0",
     "description": "",
     "private": false,
+    "repository": {
+        "url": "https://github.com/sprocketbot/service-connector"
+    },
     "scripts": {
         "lint": "eslint src",
         "lint:fix": "eslint src --fix",
