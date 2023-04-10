@@ -2,6 +2,7 @@
     "name": "@sprocketbot/service-connector",
     "version": "1.0.0",
     "description": "",
+    "private": false,
     "scripts": {
         "lint": "eslint src",
         "lint:fix": "eslint src --fix",
